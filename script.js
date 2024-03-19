@@ -11,7 +11,12 @@ function displayCombination(combination) {
 document.getElementById('calculateButton').addEventListener('click', calculateCombination);
 
 function calculateCombination() {
-  var points = parseInt(document.getElementById('points').value);
+  var action1 = parseInt(document.getElementById('action1').value);
+  var action2 = parseInt(document.getElementById('action2').value);
+  var action3 = parseInt(document.getElementById('action3').value);
+
+  var totalPoints = action1 + action2 + action3;
+  var points = parseInt(document.getElementById('points').value) + totalPoints;
 
   var availableActions = {
     'HIT LIGHT': -3,
@@ -26,7 +31,6 @@ function calculateCombination() {
 
   var combination = {};
 
-  // Ordenar as ações disponíveis pelos seus valores para começar com as ações que têm o maior impacto
   var sortedActions = Object.keys(availableActions).sort(function(a, b) {
     return availableActions[b] - availableActions[a];
   });
