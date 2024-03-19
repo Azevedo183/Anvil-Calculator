@@ -1,11 +1,19 @@
 function displayCombination(combination) {
-  var result = "Combinação de ações para atingir o valor: <br>";
+  var result = "";
   for (var action in combination) {
     if (combination.hasOwnProperty(action) && combination[action] > 0) {
       result += combination[action] + ' x ' + action + '<br>';
     }
   }
-  document.getElementById('result').innerHTML = result;
+
+  Swal.fire({
+    title: 'Combinação de ações',
+    html: result,
+    icon: 'success',
+    position: 'center',
+    showConfirmButton: true,
+    allowOutsideClick: false,
+  });
 }
 
 document.getElementById('calculateButton').addEventListener('click', calculateCombination);
@@ -53,7 +61,16 @@ function calculateCombination() {
   if (points === 0) {
     displayCombination(combination);
   } else {
-    document.getElementById('result').innerHTML = "Não há combinação de ações para atingir o valor " + points;
+    Swal.fire({
+      title: 'No actions possible',
+      text: "You have to insert the necessary points!",
+      icon: 'error',
+      position: 'center',
+      footer: '<a href="https://www.curseforge.com/minecraft/texture-packs/tfc-anvil-helper">How can I find out the points?</a>',
+      showConfirmButton: true,
+      allowOutsideClick: false,
+    });
+    //document.getElementById('result').innerHTML = "Não há combinação de ações para atingir o valor " + points;
   }
 }
 
