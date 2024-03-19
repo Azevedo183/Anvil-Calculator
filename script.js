@@ -9,6 +9,12 @@ function displayCombination(combination) {
 }
 
 document.getElementById('calculateButton').addEventListener('click', calculateCombination);
+updateImage({ target: document.getElementById('action1') });
+updateImage({ target: document.getElementById('action2') });
+updateImage({ target: document.getElementById('action3') });
+document.getElementById('action1').addEventListener('change', updateImage);
+document.getElementById('action2').addEventListener('change', updateImage);
+document.getElementById('action3').addEventListener('change', updateImage);
 
 function calculateCombination() {
   var action1 = parseInt(document.getElementById('action1').value);
@@ -51,3 +57,25 @@ function calculateCombination() {
   }
 }
 
+function updateImage(event) {
+  var selectedAction = event.target.value;
+  var imageElementId = event.target.id + "Image";
+  var imagePath = getImagePath(selectedAction); 
+
+  document.getElementById(imageElementId).src = imagePath;
+}
+
+function getImagePath(action) {
+  var actionImageMap = {
+      '-3': './res/hit_light.png',
+      '-5': './res/hard_hit.png',
+      '-6': './res/medium_hit.png',
+      '-15': './res/draw.png',
+      '2': './res/punch.png',
+      '7': './res/bend.png',
+      '13': './res/upset.png',
+      '16': './res/shrink.png',
+  };
+
+  return actionImageMap[action];
+}
