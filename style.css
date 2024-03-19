@@ -23,7 +23,7 @@ body {
   }
 
   img{
-    width: 75px; /* Ajuste o tamanho conforme necessário */
-    height: 75px; /* Ajuste o tamanho conforme necessário */
-    margin: 10px; /* Ajuste a margem conforme necessário */
+    width: 75px;
+    height: 75px;
+    margin: 20px;
 }
