@@ -5,7 +5,7 @@ Terrafirmacraft wiki page: http://wiki.terrafirmacraft.com/Main_Page
 
 For the possible use of this site, it is recommended to use the following Texture Pack to be able to visualize the number of points needed to force an item
 
-If you are going to use this software, I would like to ask for the appropriate credits. If you would like to make a donation to support the project, you can do so using the following link: https://www.paypal.com/paypalme/my/profile
+If you are going to use this software, I would like to ask for the appropriate credits. If you would like to make a donation to support the project, you can do so using the following link: https://paypal.me/azgamers666?country.x=PT&locale.x=pt_PT
 
 If you have any suggestions, don't hesitate to get in touch.
 
